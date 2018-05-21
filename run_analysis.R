@@ -61,5 +61,5 @@ data
 #Independent tidy data
 newdata <- aggregate(.~subject + activity, data, mean)
 newdata <- newdata[order(newdata$subject, newdata$activity),]
-write.table(newdata, file = "tidydata.txt", row.names = FALSE, quote = FALSE, sep = '\t')
+write.table(newdata, file = "tidydata.txt", row.names = FALSE, quote = FALSE, sep = '\t'
 
