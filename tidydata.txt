@@ -1,5 +1,5 @@
  subject           activity timeBodyAccelerometer-mean()-X timeBodyAccelerometer-mean()-Y timeBodyAccelerometer-mean()-Z timeBodyAccelerometer-std()-X
-1         1            WALKIN                      0.2773308                   -0.017383819                    -0.11114810                  -0.283740259
+1         1            WALKING                      0.2773308                   -0.017383819                    -0.11114810                  -0.283740259
 31        1   WALKING_UPSTAIRS                      0.2554617                   -0.023953149                    -0.09730200                  -0.354708025
     timeBodyAccelerometer-std()-Y timeBodyAccelerometer-std()-Z timeBodyAccelerometer-mad()-X timeBodyAccelerometer-mad()-Y timeBodyAccelerometer-mad()-Z
 1                     0.114461337                   -0.26002790                   -0.34069902                   0.061811080                  -0.250125322
