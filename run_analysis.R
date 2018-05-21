@@ -38,6 +38,10 @@ names(dataFeatures) <- dataFeaturesNames$V2
 dataCombine <- cbind(dataSubject, dataActivity)
 data <- cbind(dataFeatures, dataCombine)
 
+#Extracts only the measurements on the mean and standard deviation for each measurement
+subdataFeaturesNames <- dataFeatures[grep("mean\\(//) | std\\(//)", dataFeatures)]
+selectedNames <- c(as.character(subdataFeaturesNames), "subject", "activity")
+data <- subset(data, select = selectedNames)
 
 #Uses descriptive activity names to name the activities in the data set
 activityLabels <- read.table(file.path(path, "activity_labels.txt"), header = FALSE)
@@ -45,13 +49,14 @@ data$activity <- factor(data$activity, labels = activityLabels[,2])
 head(data$activity,35)
 
 #Appropriately labels the data set with descriptive variable names
-names(data) <- gsub("^t", "time", names(data))
-names(data) <- gsub("^f", "frequency", names(data))
-names(data) <- gsub("Acc", "Accelerometer", names(data))
-names(data) <- gsub("Gyro", "Gyroscope", names(data))
-names(data) <- gsub("Mag", "Magnitude", names(data))
-names(data) <- gsub("BodyBody", "Body", names(data))
-names(data)
+data <- gsub("^t", "time", data)
+data <- gsub("^f", "frequency", data)
+data <- gsub("Acc", "Accelerometer", data)
+data <- gsub("Gyro", "Gyroscope", data)
+data <- gsub("Mag", "Magnitude", data)
+data <- gsub("BodyBody", "Body", data)
+data
+
 
 #Independent tidy data
 newdata <- aggregate(.~subject + activity, data, mean)
