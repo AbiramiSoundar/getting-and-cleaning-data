@@ -1,4 +1,4 @@
-Getting and Cleaning Data 
+                                                     Getting and Cleaning Data 
   This is the course project of gettingand cleaning data. Source file is run_analysis.R
 1. Download the dataset in R an check if zip has already been downloaded.
 2. List the files and read from them.
